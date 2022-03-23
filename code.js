@@ -72,9 +72,11 @@ function alternarColorTema() {
 }
 
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
+ const texto = document.querySelector('body')
 
-document.addEventListener("keyup",mostrarTexto)
-
-function mostrarTexto(evento){
-  
-}
+ texto.addEventListener("keypress",(event) => {
+  if(event.key === "F"){
+    const info = document.querySelector('#sobre-mi');
+    info.classList.remove('oculto')
+  }
+})  
