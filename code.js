@@ -35,16 +35,37 @@ cambiarTema.addEventListener("click", alternarColorTema);
 
 function obtenerDatosDelUsuario() {
   /* --------------- PUNTO 1: Escribe tu codigo a partir de aqui --------------- */
-  
+ datosPersona.nombre = prompt("Ingresa tu nombre")
+ datosPersona.ciudad = prompt("Ingresa tu ciudad de residencia")
+
+ let aActual = new  Date().getFullYear()
+ console.log (aActual)
+  datosPersona.edad = aActual - parseInt(prompt("Año en que naciste"))
+
+  let interesPorJs = confirm("Te interesa javascript")
+
+  if (interesPorJs == true){
+    datosPersona.interesPorJs = "Si"
+
+  }else {
+    datosPersona.interesPorJs = "No"
+  }
 
 }
 
 function renderizarDatosUsuario() {
   /* ------------------- NO TOCAR NI ELIMINAR ESTA FUNCION. ------------------- */
-
-  obtenerDatosDelUsuario();
+obtenerDatosDelUsuario();
   /* --------------- PUNTO 2: Escribe tu codigo a partir de aqui --------------- */
-    
+    let nombre = document.getElementById('nombre')
+    let edad = document.getElementById('edad')
+    let ciudad = document.getElementById('ciudad')
+    let interesPorJs= document.getElementById('javascript')
+
+    nombre.innerHTML = datosPersona.nombre
+    edad.innerHTML = datosPersona.edad
+   ciudad.innerHTML = datosPersona.ciudad
+   interesPorJs.innerHTML = datosPersona.interesPorJs
 }
 
 
